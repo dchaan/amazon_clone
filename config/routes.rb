@@ -3,6 +3,10 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-  
+
   root "static_pages#root"
+
+  namespace :api, defaults: {format: :json} do
+    resources :user, only: [:create, :show]
+  end
 end
