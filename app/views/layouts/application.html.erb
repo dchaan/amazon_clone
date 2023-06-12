@@ -6,6 +6,17 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+    <% if current_user %>
+      <script>
+        window.user = {
+          'id': <%=user.id%>,
+          'email': <%=user.email%>,
+        }
+      </script>
+    <%end%>
+
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
