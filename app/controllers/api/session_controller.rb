@@ -11,10 +11,15 @@ class Api::SessionController < ApplicationController
       render 'api/users/show'
     else
       render json: ['Invalid username and/or password'], status: 401
+    end
   end
 
   def destroy
-    logout
-    render json: {}
+    @user = current_user
+    if @user
+      logout
+      render json: { message: "Logged out!"}
+    else
+      render json: ["You are not logged in"], status: 404
   end
 end

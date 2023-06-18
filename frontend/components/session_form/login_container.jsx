@@ -8,7 +8,7 @@ const mSTP = ({ errors }) => ({
 
 const mDTP = dispatch => ({
   login: user => dispatch(login(user)),
-  receiveSessionErrors: () => dispatch(receiveSessionErrors)
+  receiveSessionErrors: () => dispatch(receiveSessionErrors())
 })
 
 const LoginContainer = connect(mSTP, mDTP)(Login)

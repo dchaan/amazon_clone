@@ -14,8 +14,7 @@ class Signup extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.login(this.state)
-      .then(() => this.props.history.push('/'));
+    this.props.login(this.state).then(() => this.props.history.push('/'));
   }
 
   update(field) {
@@ -35,21 +34,24 @@ class Signup extends React.Component {
   }
 
   render() {
-    <div className='signup'>
-      <h1>Sign Up!</h1>
-      <form onSubmit={this.handleSubmit}>
-        <label>Username
-          <input type='text' value={this.state.email} onChange={this.update('email')} />
-        </label>
-        <label>Password
-          <input type='password' value={this.state.password} onChange={this.update('password')} />
-        </label>
-        {this.renderErrors()}
-        <button className='signup-btn' onClick={this.handleSubmit}>Sign Up</button>
-      </form>
-      <p>Already have an account?</p>
-      <Link className='signup-login-btn' to='/login'>Log in</Link>
-    </div>
+    return (
+      <div className="signup">
+        <h1>Sign Up!</h1>
+        <form>
+          <label>Username<input type="text" value={this.state.email} onChange={this.update("email")} />
+          </label>
+          <br/>
+          <label>Password<input type="password" value={this.state.password} onChange={this.update("password")} />
+          </label>
+          <br/>
+          {this.renderErrors()}
+          <button className="signup-btn" onClick={this.handleSubmit}>Sign Up</button>
+        </form>
+
+        <p>Already have an account?</p>
+        <Link className="signup-login-btn" to="/login">Log in</Link>
+      </div>
+    )
   }
 }
 
