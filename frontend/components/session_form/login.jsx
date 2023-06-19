@@ -62,7 +62,7 @@ class Login extends React.Component {
           <button className="login-btn" onClick={this.handleSubmit}>Log In</button>
           <button className="login-demo" onClick={this.loginDemo}>Demo User</button>
         </form>
-        <Link clasName="login-signup-btn" to="/signup">Create your Pawzon account!</Link>
+        <Link className="login-signup-btn" to="/signup">Create your Pawzon account!</Link>
       </div>
     )
   }
